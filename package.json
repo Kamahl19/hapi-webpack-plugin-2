@@ -1,0 +1,67 @@
+{
+  "name": "hapi-webpack-plugin-2",
+  "version": "1.0.0",
+  "description": "Webpack middleware for Hapi. Supports HMR.",
+  "author": "Martin Litvaj <kamahl19@gmail.com> (http://litvaj.com)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kamahl19/hapi-webpack-plugin-2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kamahl19/hapi-webpack-plugin-2/issues"
+  },
+  "keywords": [
+    "hapi",
+    "webpack",
+    "live-reload",
+    "dev-server",
+    "dev-middleware",
+    "hot-middleware"
+  ],
+  "main": "dist/index.js",
+  "umd:main": "dist/hapi-webpack-plugin-2.umd.production.js",
+  "module": "dist/hapi-webpack-plugin-2.es.production.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "format": "prettier --write '**/*.{ts,json,md}'",
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test"
+  },
+  "peerDependencies": {
+    "@hapi/hapi": "*",
+    "webpack": "*"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "devDependencies": {
+    "@types/connect": "^3.4.32",
+    "@types/hapi__hapi": "^18.2.3",
+    "@types/jest": "^24.0.13",
+    "@types/webpack-dev-middleware": "^2.0.2",
+    "@types/webpack-hot-middleware": "^2.16.5",
+    "husky": "^2.4.1",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.0",
+    "tsdx": "^0.6.1",
+    "tslib": "^1.10.0",
+    "typescript": "^3.5.1"
+  },
+  "dependencies": {
+    "webpack": "^4.33.0",
+    "webpack-dev-middleware": "^3.7.0",
+    "webpack-hot-middleware": "^2.25.0"
+  }
+}
