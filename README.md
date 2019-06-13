@@ -1,5 +1,7 @@
 # hapi-webpack-plugin-2
 
+<a href="https://www.npmjs.com/package/hapi-webpack-plugin-2"><img src="https://badgen.net/npm/v/hapi-webpack-plugin-2" /></a>
+
 [Webpack](http://webpack.github.io) middleware for [Hapi](https://github.com/hapijs/hapi). Supports HMR.
 
 ## Installation
