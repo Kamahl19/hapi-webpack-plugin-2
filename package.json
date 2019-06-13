@@ -1,6 +1,6 @@
 {
   "name": "hapi-webpack-plugin-2",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Webpack middleware for Hapi. Supports HMR.",
   "author": "Martin Litvaj <kamahl19@gmail.com> (http://litvaj.com)",
   "license": "MIT",
