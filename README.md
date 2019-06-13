@@ -1,8 +1,15 @@
-# hapi-webpack-plugin-2
+# Hapi Webpack Plugin 2
 
 <a href="https://www.npmjs.com/package/hapi-webpack-plugin-2"><img src="https://badgen.net/npm/v/hapi-webpack-plugin-2" /></a>
 
 [Webpack](http://webpack.github.io) middleware for [Hapi](https://github.com/hapijs/hapi). Supports HMR.
+
+## Prerequisites
+
+These packages are a peer dependency for this plugin.
+
+- Hapi (tested on >= 17.0)
+- webpack (tested on >= 4.0)
 
 ## Installation
 
@@ -12,76 +19,49 @@ npm i -D hapi-webpack-plugin-2
 
 ## Usage
 
-You can use the plugin in two ways.
+You can use this plugin in two ways.
 
-### 1) With `options` object
+### 1) With `config` object
 
 ```js
-import { Server } from '@hapi/hapi';
-import webpack from 'webpack';
-import HapiWebpackPlugin from 'hapi-webpack-plugin-2';
+const webpack = require('webpack');
+const HapiWebpackPlugin = require('hapi-webpack-plugin-2');
 
-const server = new Server({ port: 3000 });
-
-async function start() {
-  try {
-    await server.register({
-      plugin: HapiWebpackPlugin,
-      options: {
-        compiler: new webpack({
-          // webpack options http://webpack.github.io
-        }),
-        assets: {
-          // webpack-dev-middleware options https://github.com/webpack/webpack-dev-middleware
-        },
-        hot: {
-          // webpack-hot-middleware options https://github.com/glenjamin/webpack-hot-middleware
-        },
+server.register({
+  plugin: HapiWebpackPlugin,
+  options: {
+    config: {
+      compiler: webpack({
+        // webpack options http://webpack.github.io
+      }),
+      assets: {
+        // webpack-dev-middleware options https://github.com/webpack/webpack-dev-middleware
       },
-    });
-  } catch (error) {
-    console.error(error);
-  }
-
-  try {
-    server.start();
-    console.log('Server running at:', server.info.uri);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-start();
+      hot: {
+        // webpack-hot-middleware options https://github.com/glenjamin/webpack-hot-middleware
+      },
+    },
+  },
+});
 ```
 
-### 2) With `path` instead of options
+### 2) With `configPath`
 
 ```js
-import { Server } from '@hapi/hapi';
-import HapiWebpackPlugin from 'hapi-webpack-plugin-2';
+const HapiWebpackPlugin = require('hapi-webpack-plugin-2');
 
-const server = new Server({ port: 3000 });
-
-async function start() {
-  try {
-    await server.register({
-      plugin: HapiWebpackPlugin,
-      options: './webpack.config.js',
-    });
-  } catch (error) {
-    console.error(error);
-  }
-
-  try {
-    server.start();
-    console.log('Server running at:', server.info.uri);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-start();
+server.register({
+  plugin: HapiWebpackPlugin,
+  options: {
+    configPath: './webpack.config.js',
+  },
+});
 ```
+
+## Acknowledgement
+
+This plugin is originally based on [hapi-webpack-plugin](https://github.com/SimonDegraeve/hapi-webpack-plugin)
+which was in need of upgrading but seems to be abandoned. Among other issues, it is not compatible with Babel 7 and Webpack 4.
 
 ## License
 
