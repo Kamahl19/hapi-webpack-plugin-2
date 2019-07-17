@@ -60,7 +60,7 @@ function register(server: Server, options: Options) {
 
 const HapiWebpackPlugin: Plugin<Options> = {
   name: 'hapi-webpack-plugin-2',
-  version: '1.0.1',
+  version: '1.0.2',
   once: true,
   register,
 };
