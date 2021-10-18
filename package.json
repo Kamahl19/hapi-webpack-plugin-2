@@ -47,7 +47,7 @@
     "trailingComma": "es5"
   },
   "devDependencies": {
-    "@types/connect": "^3.4.32",
+    "@types/connect": "3.4.35",
     "@types/hapi__hapi": "^18.2.5",
     "@types/jest": "^24.0.15",
     "@types/webpack-dev-middleware": "^2.0.3",
