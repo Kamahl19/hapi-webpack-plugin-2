@@ -51,7 +51,7 @@
     "@types/hapi__hapi": "^18.2.5",
     "@types/jest": "^24.0.15",
     "@types/webpack-dev-middleware": "^2.0.3",
-    "@types/webpack-hot-middleware": "^2.16.5",
+    "@types/webpack-hot-middleware": "2.25.6",
     "husky": "^3.0.0",
     "prettier": "^1.18.2",
     "pretty-quick": "^1.11.1",
